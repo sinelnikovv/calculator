@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Calculator</title>
+</head>
+<body>
+
+    <div class="calculator">
+      <input class="input" id="input" type="text" oninput="this.value = this.value.replace(/[^0-9\/\*\+\-]/g, '');">
+      <table class="buttons">
+        <tr>
+          <td><button class="button" id="clear">C</button></td>
+          <td><button class="button" id="backspace">&larr;</button></td>
+          <td><button class="button" id="divide">&divide;</button></td>
+          <td><button class="button" id="root">&#8730;</button></td>
+        </tr>
+        <tr>
+          <td><button class="button" id="seven">7</button></td>
+          <td><button class="button" id="eight">8</button></td>
+          <td><button class="button" id="nine">9</button></td>
+          <td><button class="button" id="multiply">*</button></td>
+        </tr>
+        <tr>
+          <td><button class="button" id="four">4</button></td>
+          <td><button class="button" id="five">5</button></td>
+          <td><button class="button" id="six">6</button></td>
+          <td><button class="button" id="subtract">-</button></td>
+        </tr>
+        <tr>
+          <td><button class="button" id="one">1</button></td>
+          <td><button class="button" id="two">2</button></td>
+          <td><button class="button" id="three">3</button></td>
+          <td><button class="button" id="add">+</button></td>
+        </tr>
+        <tr>
+          <td><button class="button" id="zero">0</button></td>
+          <td><button class="button" id="decimal">.</button></td>
+          <td colspan="2"><button class="button colspan" id="equals">=</button></td>          
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <h1>History</h1>
+      <ol id="history"></ol>
+      <button id="clearHistory">Clear history</button>
+    </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
