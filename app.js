@@ -70,24 +70,39 @@ backspace.addEventListener("click", function () {
   }
   input.value = input.value.slice(0, -1);
 });
-divide.addEventListener("click", function () {
-  input.value += "/";
+divide.addEventListener("click", function () {  
+  if (/[\/\*\+\-]/g.test(input.value)) {
+    equal();
+    input.value += "/";
+  }else input.value += "/";
 });
 multiply.addEventListener("click", function () {
-  input.value += "*";
+  if (/[\/\*\+\-]/g.test(input.value)) {
+    equal();
+    input.value += "*";
+  }else input.value += "*";
 });
 subtract.addEventListener("click", function () {
-  input.value += "-";
+  if (/[\/\*\+\-]/g.test(input.value)) {
+    equal();
+    input.value += "-";
+  }else input.value += "-";
 });
 root.addEventListener("click", function () {
-  input.value += "sqrt";
+  if (/[\/\*\+\-]/g.test(input.value)) {
+    equal();
+    input.value += "sqrt";
+  }else input.value += "sqrt";
 });
 
 add.addEventListener("click", function () {
-  input.value += "+";
+  if (/[\/\*\+\-]/g.test(input.value)) {
+    equal();
+    input.value += "+";
+  }else input.value += "+";
 });
 
-equals.addEventListener("click", function () {  
+function equal() {
   exp = input.value
   if (input.value.includes("/")) {    
     let value = input.value.split("/");
@@ -114,9 +129,10 @@ equals.addEventListener("click", function () {
     input.value = +value[0] + +value[1];
   } 
   result = input.value;
-  addHistory();  
+  addHistory(); 
 }
-);
+
+equals.addEventListener("click", equal);
 
 
 function addHistory() {
